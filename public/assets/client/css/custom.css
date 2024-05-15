@@ -37662,3 +37662,6 @@ ul li {
 .footer-logo img {
   height: 120px !important;
 }
+.select-clear {
+  padding: 5px 12px 6px !important;
+}
