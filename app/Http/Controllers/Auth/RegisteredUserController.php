@@ -37,6 +37,9 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+
+        dd($request->all());
+
         $attributes = $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
@@ -51,7 +54,7 @@ class RegisteredUserController extends Controller
         ]);
 
         dd($attributes);
-    
+
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
@@ -62,19 +65,19 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-    
+
         // Attach interests if provided
         if ($request->has('interests')) {
             $user->interests()->attach($request->interests);
         }
-    
+
         event(new Registered($user));
-    
+
         Auth::login($user);
-    
+
         // Dispatch job to send a welcome email
         SendWelcomeEmail::dispatch($user);
-    
+
         return redirect(route('dashboard', absolute: false));
     }
 }
