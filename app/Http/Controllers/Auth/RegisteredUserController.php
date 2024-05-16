@@ -37,9 +37,6 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-
-        dd($request->all());
-
         $attributes = $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
@@ -53,12 +50,12 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        dd($attributes);
-
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'phone' => $request->phone,
+            'phone_verification_code' => $request->phone_verification_code,
+            'phone_verified_at' => now(),
             'id_number' => Crypt::encryptString($request->id_number),
             'date_of_birth' => $request->date_of_birth,
             'language_id' => $request->language,

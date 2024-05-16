@@ -175,10 +175,80 @@
             $('.step-' + step).show();
         }
 
+        function checkRecordsExistence() {
+            return $.when(
+                $.post('{{ route('check.email') }}', {
+                    email: $('#email').val(),
+                    _token: '{{ csrf_token() }}'
+                }),
+                $.post('{{ route('check.phone') }}', {
+                    phone: $('#phone').val(),
+                    _token: '{{ csrf_token() }}'
+                })
+            ).then(function(emailData, phoneData) {
+                let canProceed = true;
+                if (emailData[0].exists) {
+                    $('#email_error').text('Email already exists').show();
+                    canProceed = false;
+                }
+                if (phoneData[0].exists) {
+                    $('#phone_error').text('Phone number already exists').show();
+                    canProceed = false;
+                }
+                return canProceed;
+            });
+        }
+
+        function formatPhoneNumber(phone) {
+            // Remove non-numeric characters except the leading +
+            phone = phone.replace(/[^0-9+]/g, '');
+
+            // Ensure it starts with +27 and has exactly 12 characters
+            if (phone.startsWith('27')) {
+                phone = '+' + phone;
+            } else if (phone.startsWith('0')) {
+                phone = '+27' + phone.slice(1);
+            } else if (!phone.startsWith('+27')) {
+                phone = '+27' + phone;
+            }
+
+            // Trim to max 12 characters
+            return phone.slice(0, 12);
+        }
+
         $('.btn-next').on('click', function() {
             if (validateStep(currentStep)) {
-                currentStep++;
-                showStep(currentStep);
+                if (currentStep === 1) {
+                    checkRecordsExistence().then(function(canProceed) {
+                        if (canProceed) {
+                            $.post('/send-code', {
+                                phone: $('#phone').val(),
+                                _token: '{{ csrf_token() }}'
+                            }).done(function(data) {
+                                currentStep++;
+                                showStep(currentStep);
+                            }).fail(function(error) {
+                                $('#phone_error').text(
+                                    'Failed to send verification code.').show();
+                            });
+                        }
+                    });
+                } else if (currentStep === 2) {
+                    $.post('/verify-code', {
+                        phone: $('#phone').val(),
+                        code: $('#phone_verification_code').val(),
+                        _token: '{{ csrf_token() }}'
+                    }).done(function(data) {
+                        currentStep++;
+                        showStep(currentStep);
+                    }).fail(function(error) {
+                        $('#phone_verification_code_error').text('Invalid verification code.')
+                            .show();
+                    });
+                } else {
+                    currentStep++;
+                    showStep(currentStep);
+                }
             }
         });
 
@@ -213,11 +283,13 @@
         });
 
         $('#phone').on('blur', function() {
+            const formattedPhone = formatPhoneNumber($('#phone').val());
+            $('#phone').val(formattedPhone);
             validateField('#phone', '#phone_error', value => !/^\+27\d{9}$/.test(value) ?
                 'Invalid phone number' : '');
             // Add AJAX call to check if phone exists
             $.post('{{ route('check.phone') }}', {
-                    phone: $('#phone').val(),
+                    phone: formattedPhone,
                     _token: '{{ csrf_token() }}'
                 })
                 .done(function(data) {

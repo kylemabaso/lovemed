@@ -12,7 +12,7 @@
 
     <title>@yield('title')</title>
 
-    <link rel="shortcut icon" type="image/png" href="assets/client/images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/client/img/favicon.png') }}" />
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -27,10 +27,10 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- Feathericon CSS -->
-    <link rel="stylesheet" href="assets/client/css/feather.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/feather.css') }}">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/client/css/custom.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/custom.css') }}">
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
