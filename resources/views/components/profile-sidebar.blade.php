@@ -5,11 +5,13 @@
                 <img src="assets/client/img/doctors/doctor-thumb-02.jpg" alt="User Image">
             </a>
             <div class="profile-det-info">
-                <h3>Dr. Darren Elder</h3>
+                @auth
+                    <h3>{{ auth()->user()->full_name }}</h3>
+                    <div class="patient-details">
+                        <h5 class="mb-0">{{ auth()->user()->email }}</h5>
+                    </div>
+                @endauth
 
-                <div class="patient-details">
-                    <h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
-                </div>
             </div>
         </div>
     </div>
@@ -22,7 +24,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="appointments.html">
                         <i class="fas fa-calendar-check"></i>
                         <span>Appointments</span>
@@ -88,7 +90,7 @@
                         <i class="fas fa-lock"></i>
                         <span>Change Password</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="login.html">
                         <i class="fas fa-sign-out-alt"></i>

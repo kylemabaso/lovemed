@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class DashboardsController extends Controller
 {
@@ -33,9 +34,12 @@ class DashboardsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        return view("dashboard");
+        $patients = User::role('Patient')->with('language')->get();
+        $staff = User::role(['Pharmacist', 'Admin'])->with('language')->get();
+
+        return view("pages.dashboards.doctor", compact('patients', 'staff'));
     }
 
     /**

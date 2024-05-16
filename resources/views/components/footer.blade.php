@@ -35,7 +35,7 @@
                                 <h2 class="footer-title">Contact Us</h2>
                                 <div class="footer-contact-info">
                                     <div class="footer-address">
-                                        <p><i class="feather-map-pin"></i> Jackal Creek Golf Estate</p>
+                                        <p><i class="feather-map-pin"></i> 97 Central Street, Houghton Estate</p>
                                     </div>
                                     <div class="footer-address">
                                         <p><i class="feather-phone-call"></i> +27713027024</p>
@@ -57,10 +57,9 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-6">
                         <div class="copyright-text">
-                            <p class="mb-0">Copyright © 2024 <a
-                                    href="#"
-                                    target="_blank">Kyle Mabaso.</a> All Rights Reserved
-                                </p>
+                            <p class="mb-0">Copyright © 2024 <a href="#" target="_blank">Kyle Mabaso.</a> All
+                                Rights Reserved
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6">

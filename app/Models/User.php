@@ -57,9 +57,17 @@ class User extends Authenticatable
         ];
     }
 
+    protected $appends = ['full_name'];
+
+    public function getFullNameAttribute()
+    {
+        return ucfirst($this->first_name) . ' ' . ucfirst($this->last_name);
+    }
+
+
     public function interests()
     {
-        return $this->hasMany(Interest::class);
+        return $this->belongsToMany(Interest::class);
     }
 
     public function gender()

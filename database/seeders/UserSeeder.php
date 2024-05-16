@@ -10,6 +10,7 @@ use App\Models\Race;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Crypt;
 
 class UserSeeder extends Seeder
 {
@@ -57,7 +58,7 @@ class UserSeeder extends Seeder
             $user = User::create([
                 'first_name' => $name['first_name'],
                 'last_name' => $name['last_name'],
-                'id_number' => bcrypt($saIdNumber),
+                'id_number' => $saIdNumber,
                 'date_of_birth' => $dob->format('Y-m-d'),
                 'language_id' => $languageIds[array_rand($languageIds)],
                 'gender_id' => $genderId,

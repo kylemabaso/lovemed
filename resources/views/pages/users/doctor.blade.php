@@ -90,6 +90,7 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Language</th>
+                                            <th>Email</th>
                                             <th>Phone</th>
                                             <th>Action</th>
                                         </tr>
@@ -110,6 +111,7 @@
                                             <td>
                                                 {{ $patient->language->name }}
                                             </td>
+                                            <td>{{ $patient->email }}</td>
                                             <td>{{ $patient->phone }}</td>
                                             <td>
                                                 <div class="table-action">
@@ -118,7 +120,7 @@
                                                         <i class="far fa-eye"></i> View
                                                     </a>
 
-                                                    <a href="{{ route('users.edit', ['user' => $patient]) }}"
+                                                    <a href="javascript:void(0);"
                                                         class="btn btn-sm bg-success-light">
                                                         <i class="fas fa-pencil"></i> Edit
                                                     </a>

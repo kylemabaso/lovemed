@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-md-12 col-lg-6 login-right">
                         <div class="login-header">
-                            <h3>Patient Register <a href="{{ route('login') }}">Are you a Doctor?</a></h3>
+                            <h3>Patient Register <a href="{{ route('login') }}">Already registered?</a></h3>
                         </div>
 
                         <!-- Multistep Form -->
