@@ -14,6 +14,12 @@ Route::post('/check-email', [UsersController::class, 'checkEmail'])->name('check
 Route::post('/check-phone', [UsersController::class, 'checkPhone'])->name('check.phone');
 Route::post('/check-id', [UsersController::class, 'checkId'])->name('check.id');
 
+Route::get('send-test-email', function () {
+    $user = App\Models\User::first();
+    Mail::to($user->email)->send(new App\Mail\WelcomeEmail($user));
+    return 'Email sent';
+});
+
 Route::post('/send-code', function (Request $request, TwilioService $twilioService) {
     $request->validate([
         'phone' => 'required'
