@@ -22,188 +22,11 @@
                         <i class="fas fa-times"></i>
                     </a>
                 </div>
-                {{-- <ul class="main-nav">
+                <ul class="main-nav">
                     <li class="has-submenu megamenu">
-                        <a href="javascript:void(0);">Home <i class="fas fa-chevron-down"></i></a>
-                        <ul class="submenu mega-submenu">
-                            <li>
-                                <div class="megamenu-wrapper">
-                                    <div class="row">
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-11.jpg"
-                                                            class="img-fluid " alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index.html" class="inner-demo-img">General Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo ">
-                                                <div class="demo-img">
-                                                    <a href="index-2.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-10.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-2.html" class="inner-demo-img">General Home
-                                                        2</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-3.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-09.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-3.html" class="inner-demo-img">General Home
-                                                        3</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-4.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-08.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-4.html" class="inner-demo-img">General Home
-                                                        4</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-5.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-07.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-5.html" class="inner-demo-img">Cardiology
-                                                        Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-6.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-06.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-6.html" class="inner-demo-img">Eye Care
-                                                        Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-7.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-05.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-7.html" class="inner-demo-img">Veterinary
-                                                        Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-8.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-04.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-8.html" class="inner-demo-img">Paediatric
-                                                        Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-9.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-03.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-9.html" class="inner-demo-img">Fertility
-                                                        Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-10.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-02.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-10.html" class="inner-demo-img">ENT
-                                                        Hospital
-                                                        Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-11.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-01.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-11.html" class="inner-demo-img">Cosmetics
-                                                        Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-12.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-12.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-12.html" class="inner-demo-img">Lab Test
-                                                        Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2">
-                                            <div class="single-demo">
-                                                <div class="demo-img">
-                                                    <a href="index-13.html" class="inner-demo-img"><img
-                                                            src="assets/client/img/home-13.jpg"
-                                                            class="img-fluid" alt="img"></a>
-                                                </div>
-                                                <div class="demo-info">
-                                                    <a href="index-13.html" class="inner-demo-img">Homecare
-                                                        Home</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <a href="/">Home </a>
                     </li>
-                    <li class="has-submenu active">
+                    {{-- <li class="has-submenu active">
                         <a href="javascript:void(0);">Doctors <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
                             <li class="active"><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
@@ -337,13 +160,13 @@
                             <li><a href="admin/index.html" target="_blank">Admin</a></li>
                             <li><a href="pharmacy/index.html" target="_blank">Pharmacy Admin</a></li>
                         </ul>
-                    </li>
-                </ul> --}}
+                    </li> --}}
+                </ul>
             </div>
-            {{-- <ul class="nav header-navbar-rht">
+            <ul class="nav header-navbar-rht">
 
                 <!-- Cart -->
-                <li class="nav-item dropdown noti-nav view-cart-header me-3">
+                {{-- <li class="nav-item dropdown noti-nav view-cart-header me-3">
                     <a href="#" class="dropdown-toggle nav-link p-0 position-relative"
                         data-bs-toggle="dropdown">
                         <i class="fa-solid fa-cart-shopping"></i> <small class="unread-msg1">7</small>
@@ -410,11 +233,11 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
                 <!-- /Cart -->
 
                 <!-- Notifications -->
-                <li class="nav-item dropdown noti-nav me-3 pe-0">
+                {{-- <li class="nav-item dropdown noti-nav me-3 pe-0">
                     <a href="#" class="dropdown-toggle nav-link p-0" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-bell"></i> <span class="badge">5</span>
                     </a>
@@ -492,15 +315,16 @@
                             </ul>
                         </div>
                     </div>
-                </li>
+                </li> --}}
                 <!-- /Notifications -->
 
                 <!-- User Menu -->
+                @auth
                 <li class="nav-item dropdown has-arrow logged-item">
                     <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                         <span class="user-img">
                             <img class="rounded-circle" src="assets/client/img/doctors/doctor-thumb-02.jpg"
-                                width="31" alt="Darren Elder">
+                                width="31" alt="{{ auth()->user()->full_name }}">
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
@@ -510,18 +334,22 @@
                                     class="avatar-img rounded-circle">
                             </div>
                             <div class="user-text">
-                                <h6>Darren Elder</h6>
-                                <p class="text-muted mb-0">Doctor</p>
+                                <h6>{{ auth()->user()->full_name }}</h6>
+                                {{-- <p class="text-muted mb-0">{{ auth()->user()->role->name }}</p> --}}
                             </div>
                         </div>
-                        <a class="dropdown-item" href="doctor-dashboard.html">Dashboard</a>
-                        <a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </div>
                 </li>
+                @endauth
+                
                 <!-- /User Menu -->
 
-            </ul> --}}
+            </ul>
         </nav>
     </div>
 </header>
