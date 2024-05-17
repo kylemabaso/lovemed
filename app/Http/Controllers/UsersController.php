@@ -51,18 +51,14 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        // Decrypt the id_number before passing it to the view
-        // try {
-        //     $user->id_number = Crypt::decryptString($user->id_number);
-        // } catch (DecryptException $e) {
-        //     // Handle the error, maybe log it or show an error message
-            
-        //     return redirect()->back()->withErrors(['error' => 'Invalid ID Number']);
-        // }
-    
+        try {
+            $user->id_number = Crypt::decryptString($user->id_number);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            return redirect()->back()->withErrors(['error' => 'Invalid ID Number']);
+        }
+
         $languages = Language::all();
         $interests = Interest::all();
-
         return view('pages.users.edit', compact('user', 'languages', 'interests'));
     }
 
@@ -81,8 +77,7 @@ class UsersController extends Controller
             'password' => ['nullable', 'confirmed', \Illuminate\Validation\Rules\Password::defaults()],
         ]);
 
-        // Encrypt the id_number before saving
-        // $attributes['id_number'] = Crypt::encryptString($attributes['id_number']);
+        $attributes['id_number'] = Crypt::encryptString($attributes['id_number']);
 
         if ($attributes['password']) {
             $attributes['password'] = Hash::make($attributes['password']);
@@ -90,10 +85,8 @@ class UsersController extends Controller
             unset($attributes['password']);
         }
 
-        // Update user with validated attributes
         $user->update($attributes);
 
-        // Sync interests if they exist
         if ($request->has('interests')) {
             $user->interests()->sync($attributes['interests']);
         }
@@ -104,9 +97,11 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()->back()->with('success', 'User deleted successfully.');
     }
 
     // Method to check if email is unique

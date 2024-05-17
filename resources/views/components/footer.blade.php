@@ -5,7 +5,7 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <a href="index.html"><img src="assets/client/img/icon.svg" alt="logo"></a>
+                            <a href="index.html"><img src="{{ asset('assets/client/img/icon.svg') }}" alt="Lovemed"></a>
                         </div>
                         <div class="footer-about-content">
                             <p></p>

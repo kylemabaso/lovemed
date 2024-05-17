@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Facades\Crypt;
 
 class User extends Authenticatable
 {
@@ -83,5 +84,20 @@ class User extends Authenticatable
     public function race()
     {
         return $this->belongsTo(Race::class);
+    }
+
+    
+    public function setIdNumberAttribute($value)
+    {
+        $this->attributes['id_number'] = Crypt::encryptString($value);
+    }
+
+    public function getIdNumberAttribute($value)
+    {
+        try {
+            return Crypt::decryptString($value);
+        } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+            return $value; // Or handle the error as necessary
+        }
     }
 }

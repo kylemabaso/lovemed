@@ -52,12 +52,12 @@
 
                             <!-- Step 2 -->
                             <div class="step step-2" style="display:none;">
-                                <div class="mb-3 form-focus">
+                                {{-- <div class="mb-3 form-focus">
                                     <input type="text" name="phone_verification_code" id="phone_verification_code"
                                         class="form-control floating">
                                     <label class="focus-label">Phone Verification Code</label>
                                     <div class="invalid-feedback" id="phone_verification_code_error"></div>
-                                </div>
+                                </div> --}}
                                 <div class="mb-3 form-focus">
                                     <input type="text" name="id_number" id="id_number" class="form-control floating"
                                         value="{{ old('id_number') }}">
@@ -154,8 +154,8 @@
                 valid &= validateField('#phone', '#phone_error', value => !/^\+27\d{9}$/.test(value) ?
                     'Invalid phone number' : '');
             } else if (step === 2) {
-                valid &= validateField('#phone_verification_code', '#phone_verification_code_error', value =>
-                    value.trim() === '' ? 'Phone verification code is required' : '');
+                // valid &= validateField('#phone_verification_code', '#phone_verification_code_error', value =>
+                //     value.trim() === '' ? 'Phone verification code is required' : '');
                 valid &= validateRSAidnumber();
                 valid &= validateField('select[name="language"]', '.invalid-feedback.language', value => $(
                     value).val() === '' ? 'Language is required' : '');
@@ -221,30 +221,30 @@
                 if (currentStep === 1) {
                     checkRecordsExistence().then(function(canProceed) {
                         if (canProceed) {
-                            $.post('/send-code', {
-                                phone: $('#phone').val(),
-                                _token: '{{ csrf_token() }}'
-                            }).done(function(data) {
-                                currentStep++;
-                                showStep(currentStep);
-                            }).fail(function(error) {
-                                $('#phone_error').text(
-                                    'Failed to send verification code.').show();
-                            });
+                            // $.post('/send-code', {
+                            //     phone: $('#phone').val(),
+                            //     _token: '{{ csrf_token() }}'
+                            // }).done(function(data) {
+                            //     currentStep++;
+                            //     showStep(currentStep);
+                            // }).fail(function(error) {
+                            //     $('#phone_error').text(
+                            //         'Failed to send verification code.').show();
+                            // });
                         }
                     });
                 } else if (currentStep === 2) {
-                    $.post('/verify-code', {
-                        phone: $('#phone').val(),
-                        code: $('#phone_verification_code').val(),
-                        _token: '{{ csrf_token() }}'
-                    }).done(function(data) {
-                        currentStep++;
-                        showStep(currentStep);
-                    }).fail(function(error) {
-                        $('#phone_verification_code_error').text('Invalid verification code.')
-                            .show();
-                    });
+                    // $.post('/verify-code', {
+                    //     phone: $('#phone').val(),
+                    //     code: $('#phone_verification_code').val(),
+                    //     _token: '{{ csrf_token() }}'
+                    // }).done(function(data) {
+                    //     currentStep++;
+                    //     showStep(currentStep);
+                    // }).fail(function(error) {
+                    //     $('#phone_verification_code_error').text('Invalid verification code.')
+                    //         .show();
+                    // });
                 } else {
                     currentStep++;
                     showStep(currentStep);

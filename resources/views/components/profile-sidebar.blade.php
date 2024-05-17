@@ -2,7 +2,7 @@
     <div class="widget-profile pro-widget-content">
         <div class="profile-info-widget">
             <a href="#" class="booking-doc-img">
-                <img src="assets/client/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+                <img src="{{ asset('assets/client/img/doctors/doctor-thumb-02.jpg') }}" alt="User Image">
             </a>
             <div class="profile-det-info">
                 @auth
@@ -19,7 +19,7 @@
         <nav class="dashboard-menu">
             <ul>
                 <li class="active">
-                    <a href="doctor-dashboard.html">
+                    <a href="{{ route('dashboard')}}">
                         <i class="fas fa-columns"></i>
                         <span>Dashboard</span>
                     </a>
@@ -92,11 +92,15 @@
                     </a>
                 </li> --}}
                 <li>
-                    <a href="login.html">
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
                     </a>
                 </li>
+                
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </ul>
         </nav>
     </div>

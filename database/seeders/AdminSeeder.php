@@ -22,7 +22,7 @@ class AdminSeeder extends Seeder
         $user = User::create([
             'first_name' => 'Kyle',
             'last_name' => 'Mabaso',
-            'id_number' => '8609235353083',
+            'id_number' => Crypt::encryptString('8609235353083'),
             'date_of_birth' => '1986-09-23',
             'email' => 'kyle@zwinotech.co.za',
             'email_verified_at' => now(),
