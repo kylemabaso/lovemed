@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->text('id_number')->unique();
+            $table->unique('id_number(255)', 'id_number_index');
             $table->string('date_of_birth');
             $table->foreignId('gender_id')->nullable()->constrained();
             $table->foreignId('language_id')->constrained();
