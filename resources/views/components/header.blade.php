@@ -23,9 +23,9 @@
                     </a>
                 </div>
                 <ul class="main-nav">
-                    <li class="has-submenu megamenu">
+                    {{-- <li class="has-submenu megamenu">
                         <a href="/">Home </a>
-                    </li>
+                    </li> --}}
                     {{-- <li class="has-submenu active">
                         <a href="javascript:void(0);">Doctors <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
@@ -320,33 +320,34 @@
 
                 <!-- User Menu -->
                 @auth
-                <li class="nav-item dropdown has-arrow logged-item">
-                    <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                        <span class="user-img">
-                            <img class="rounded-circle" src="assets/client/img/doctors/doctor-thumb-02.jpg"
-                                width="31" alt="{{ auth()->user()->full_name }}">
-                        </span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end">
-                        <div class="user-header">
-                            <div class="avatar avatar-sm">
-                                <img src="assets/client/img/doctors/doctor-thumb-02.jpg" alt="User Image"
-                                    class="avatar-img rounded-circle">
+                    <li class="nav-item dropdown has-arrow logged-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                            <span class="user-img">
+                                <img class="rounded-circle" src="assets/client/img/doctors/doctor-thumb-02.jpg"
+                                    width="31" alt="{{ auth()->user()->full_name }}">
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <div class="user-header">
+                                <div class="avatar avatar-sm">
+                                    <img src="assets/client/img/doctors/doctor-thumb-02.jpg" alt="User Image"
+                                        class="avatar-img rounded-circle">
+                                </div>
+                                <div class="user-text">
+                                    <h6>{{ auth()->user()->full_name }}</h6>
+                                    {{-- <p class="text-muted mb-0">{{ auth()->user()->role->name }}</p> --}}
+                                </div>
                             </div>
-                            <div class="user-text">
-                                <h6>{{ auth()->user()->full_name }}</h6>
-                                {{-- <p class="text-muted mb-0">{{ auth()->user()->role->name }}</p> --}}
-                            </div>
+                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                            <a class="dropdown-item" href="#"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
-                        <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
-                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
+                    </li>
                 @endauth
-                
+
                 <!-- /User Menu -->
 
             </ul>
