@@ -37,9 +37,9 @@ class DashboardsController extends Controller
     public function show()
     {
         $patients = User::role('Patient')->with('language')->get();
-        $staff = User::role(['Pharmacist', 'Admin'])->with('language')->get();
+        $employees = User::role(['Pharmacist', 'Admin'])->with('language')->get();
 
-        return view("pages.dashboards.doctor", compact('patients', 'staff'));
+        return view("pages.dashboards.doctor", compact('patients', 'employees'));
     }
 
     /**

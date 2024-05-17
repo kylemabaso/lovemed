@@ -115,10 +115,13 @@
                                                                 class="btn btn-sm bg-success-light">
                                                                 <i class="fas fa-pencil"></i> Edit
                                                             </a>
-                                                            <a href="javascript:void(0);" class="btn btn-sm bg-danger-light" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $patient->id }}').submit();">
+                                                            <a href="javascript:void(0);" class="btn btn-sm bg-danger-light"
+                                                                onclick="event.preventDefault(); document.getElementById('delete-form-{{ $patient->id }}').submit();">
                                                                 <i class="fas fa-trash-o"></i> Delete
                                                             </a>
-                                                            <form id="delete-form-{{ $patient->id }}" action="{{ route('users.destroy', ['user' => $patient->id]) }}" method="POST" style="display: none;">
+                                                            <form id="delete-form-{{ $patient->id }}"
+                                                                action="{{ route('users.destroy', ['user' => $patient->id]) }}"
+                                                                method="POST" style="display: none;">
                                                                 @csrf
                                                                 @method('DELETE')
                                                             </form>
@@ -140,201 +143,52 @@
                                     <table class="table table-hover table-center mb-0">
                                         <thead>
                                             <tr>
-                                                <th>Patient Name</th>
-                                                <th>Appt Date</th>
-                                                <th>Purpose</th>
-                                                <th>Type</th>
-                                                <th>Paid Amount</th>
+                                                <th>Name</th>
+                                                <th>Language</th>
+                                                <th>Phone</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="patient-profile.html" class="avatar avatar-sm me-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/client/img/patients/patient6.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="patient-profile.html">Elsie Gilley
-                                                            <span>#PT0006</span></a>
-                                                    </h2>
-                                                </td>
-                                                <td>14 Nov 2023 <span class="d-block text-info">6.00 PM</span>
-                                                </td>
-                                                <td>Fever</td>
-                                                <td>Old Patient</td>
-                                                <td>$300</td>
-                                                <td>
-                                                    <div class="table-action">
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-                                                            <i class="far fa-eye"></i> View
-                                                        </a>
-
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-                                                            <i class="fas fa-check"></i> Accept
-                                                        </a>
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-                                                            <i class="fas fa-times"></i> Cancel
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="patient-profile.html" class="avatar avatar-sm me-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/client/img/patients/patient7.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="patient-profile.html">Joan Gardner
-                                                            <span>#PT0006</span></a>
-                                                    </h2>
-                                                </td>
-                                                <td>14 Nov 2023 <span class="d-block text-info">5.00 PM</span>
-                                                </td>
-                                                <td>General</td>
-                                                <td>Old Patient</td>
-                                                <td>$100</td>
-                                                <td>
-                                                    <div class="table-action">
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-                                                            <i class="far fa-eye"></i> View
-                                                        </a>
-
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-                                                            <i class="fas fa-check"></i> Accept
-                                                        </a>
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-                                                            <i class="fas fa-times"></i> Cancel
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="patient-profile.html" class="avatar avatar-sm me-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/client/img/patients/patient8.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="patient-profile.html">Daniel
-                                                            Griffing <span>#PT0007</span></a>
-                                                    </h2>
-                                                </td>
-                                                <td>14 Nov 2023 <span class="d-block text-info">3.00 PM</span>
-                                                </td>
-                                                <td>General</td>
-                                                <td>New Patient</td>
-                                                <td>$75</td>
-                                                <td>
-                                                    <div class="table-action">
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-                                                            <i class="far fa-eye"></i> View
-                                                        </a>
-
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-                                                            <i class="fas fa-check"></i> Accept
-                                                        </a>
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-                                                            <i class="fas fa-times"></i> Cancel
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="patient-profile.html" class="avatar avatar-sm me-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/client/img/patients/patient9.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="patient-profile.html">Walter
-                                                            Roberson <span>#PT0008</span></a>
-                                                    </h2>
-                                                </td>
-                                                <td>14 Nov 2023 <span class="d-block text-info">1.00 PM</span>
-                                                </td>
-                                                <td>General</td>
-                                                <td>Old Patient</td>
-                                                <td>$350</td>
-                                                <td>
-                                                    <div class="table-action">
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-                                                            <i class="far fa-eye"></i> View
-                                                        </a>
-
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-                                                            <i class="fas fa-check"></i> Accept
-                                                        </a>
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-                                                            <i class="fas fa-times"></i> Cancel
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="patient-profile.html" class="avatar avatar-sm me-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/client/img/patients/patient10.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="patient-profile.html">Robert
-                                                            Rhodes <span>#PT0010</span></a>
-                                                    </h2>
-                                                </td>
-                                                <td>14 Nov 2023 <span class="d-block text-info">10.00 AM</span>
-                                                </td>
-                                                <td>General</td>
-                                                <td>New Patient</td>
-                                                <td>$175</td>
-                                                <td>
-                                                    <div class="table-action">
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-                                                            <i class="far fa-eye"></i> View
-                                                        </a>
-
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-                                                            <i class="fas fa-check"></i> Accept
-                                                        </a>
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-                                                            <i class="fas fa-times"></i> Cancel
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h2 class="table-avatar">
-                                                        <a href="patient-profile.html" class="avatar avatar-sm me-2"><img
-                                                                class="avatar-img rounded-circle"
-                                                                src="assets/client/img/patients/patient11.jpg"
-                                                                alt="User Image"></a>
-                                                        <a href="patient-profile.html">Harry
-                                                            Williams <span>#PT0011</span></a>
-                                                    </h2>
-                                                </td>
-                                                <td>14 Nov 2023 <span class="d-block text-info">11.00 AM</span>
-                                                </td>
-                                                <td>General</td>
-                                                <td>New Patient</td>
-                                                <td>$450</td>
-                                                <td>
-                                                    <div class="table-action">
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-                                                            <i class="far fa-eye"></i> View
-                                                        </a>
-
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-                                                            <i class="fas fa-check"></i> Accept
-                                                        </a>
-                                                        <a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-                                                            <i class="fas fa-times"></i> Cancel
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            @foreach ($employees as $employee)
+                                                <tr>
+                                                    <td>
+                                                        <h2 class="table-avatar">
+                                                            <a href="patient-profile.html"
+                                                                class="avatar avatar-sm me-2"><img
+                                                                    class="avatar-img rounded-circle"
+                                                                    src="assets/client/img/patients/patient.jpg"
+                                                                    alt="User Image"></a>
+                                                            <a href="#">{{ $employee->full_name }}</a>
+                                                        </h2>
+                                                    </td>
+                                                    <td>
+                                                        {{ $employee->language->name }}
+                                                    </td>
+                                                    <td>{{ $employee->phone }}</td>
+                                                    <td>
+                                                        <div class="table-action">
+                                                            <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+                                                                <i class="far fa-eye"></i> View
+                                                            </a>
+                                                            <a href="{{ route('users.edit', ['user' => $employee]) }}"
+                                                                class="btn btn-sm bg-success-light">
+                                                                <i class="fas fa-pencil"></i> Edit
+                                                            </a>
+                                                            <a href="javascript:void(0);" class="btn btn-sm bg-danger-light"
+                                                                onclick="event.preventDefault(); document.getElementById('delete-form-{{ $employee->id }}').submit();">
+                                                                <i class="fas fa-trash-o"></i> Delete
+                                                            </a>
+                                                            <form id="delete-form-{{ $employee->id }}"
+                                                                action="{{ route('users.destroy', ['user' => $employee->id]) }}"
+                                                                method="POST" style="display: none;">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                            </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
