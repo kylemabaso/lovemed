@@ -108,7 +108,7 @@
                                                     <td>{{ $patient->phone }}</td>
                                                     <td>
                                                         <div class="table-action">
-                                                            <a href="{{ route('profile', ['user' => $patient]) }}" class="btn btn-sm bg-info-light">
+                                                            <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
                                                                 <i class="far fa-eye"></i> View
                                                             </a>
                                                             <a href="{{ route('users.edit', ['user' => $patient]) }}"
@@ -168,7 +168,7 @@
                                                     <td>{{ $employee->phone }}</td>
                                                     <td>
                                                         <div class="table-action">
-                                                            <a href="{{ route('profile', ['user' => $employee]) }}" class="btn btn-sm bg-info-light">
+                                                            <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
                                                                 <i class="far fa-eye"></i> View
                                                             </a>
                                                             <a href="{{ route('users.edit', ['user' => $employee]) }}"

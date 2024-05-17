@@ -3,7 +3,6 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardsController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\ProfilesController;
 use App\Services\TwilioService;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -44,9 +43,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/users/{user}/edit', [UsersController::class, 'edit'])->name('users.edit');
     Route::put('/users/{user}', [UsersController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
-
-    Route::get('/users/profile/{user}', [ProfilesController::class, 'show'])->name('profile');
-
 });
 
 require __DIR__.'/auth.php';
