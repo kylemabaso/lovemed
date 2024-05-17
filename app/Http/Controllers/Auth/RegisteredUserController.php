@@ -56,7 +56,7 @@ class RegisteredUserController extends Controller
             'phone' => $request->phone,
             // 'phone_verification_code' => $request->phone_verification_code,
             // 'phone_verified_at' => now(),
-            'id_number' => $request->id_number,
+            'id_number' => Crypt::encryptString($request->id_number),
             'date_of_birth' => $request->date_of_birth,
             'language_id' => $request->language,
             'email' => $request->email,
