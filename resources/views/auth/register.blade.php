@@ -221,6 +221,7 @@
                 if (currentStep === 1) {
                     checkRecordsExistence().then(function(canProceed) {
                         if (canProceed) {
+                            // Temporarily commented out phone verification code
                             // $.post('/send-code', {
                             //     phone: $('#phone').val(),
                             //     _token: '{{ csrf_token() }}'
@@ -231,9 +232,12 @@
                             //     $('#phone_error').text(
                             //         'Failed to send verification code.').show();
                             // });
+                            currentStep++;
+                            showStep(currentStep);
                         }
                     });
                 } else if (currentStep === 2) {
+                    // Temporarily commented out phone verification code
                     // $.post('/verify-code', {
                     //     phone: $('#phone').val(),
                     //     code: $('#phone_verification_code').val(),
@@ -245,6 +249,8 @@
                     //     $('#phone_verification_code_error').text('Invalid verification code.')
                     //         .show();
                     // });
+                    currentStep++;
+                    showStep(currentStep);
                 } else {
                     currentStep++;
                     showStep(currentStep);
@@ -299,10 +305,11 @@
                 });
         });
 
-        $('#phone_verification_code').on('blur', function() {
-            validateField('#phone_verification_code', '#phone_verification_code_error', value => value
-                .trim() === '' ? 'Phone verification code is required' : '');
-        });
+        // Temporarily commented out phone verification code
+        // $('#phone_verification_code').on('blur', function() {
+        //     validateField('#phone_verification_code', '#phone_verification_code_error', value => value
+        //         .trim() === '' ? 'Phone verification code is required' : '');
+        // });
 
         $('#id_number').on('blur', function() {
             validateRSAidnumber();
