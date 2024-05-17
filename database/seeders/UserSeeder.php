@@ -27,16 +27,16 @@ class UserSeeder extends Seeder
 
         // Array of unique names and emails
         $names = [
-            ['first_name' => 'Asande', 'last_name' => 'Ndlela', 'email_prefix' => 'aserandlela'],
-            ['first_name' => 'Sidwell', 'last_name' => 'Bombwe', 'email_prefix' => 'sidwellb'],
-            ['first_name' => 'Lerato', 'last_name' => 'Mogale', 'email_prefix' => 'leratom'],
-            ['first_name' => 'Thembi', 'last_name' => 'Nkosi', 'email_prefix' => 'thembink'],
-            ['first_name' => 'Peter', 'last_name' => 'Smith', 'email_prefix' => 'peters'],
-            ['first_name' => 'Dwayne', 'last_name' => 'Johnson', 'email_prefix' => 'dwayne'],
-            ['first_name' => 'Julia', 'last_name' => 'Roberts', 'email_prefix' => 'julia'],
-            ['first_name' => 'Nandi', 'last_name' => 'Zulu', 'email_prefix' => 'nandiz'],
-            ['first_name' => 'Sipho', 'last_name' => 'Mkhize', 'email_prefix' => 'siphom'],
-            ['first_name' => 'Mary', 'last_name' => 'Jane', 'email_prefix' => 'maryj']
+            ['first_name' => 'Asande', 'last_name' => 'Ndlela', 'email_prefix' => 'asandendlela'],
+            ['first_name' => 'Sidwell', 'last_name' => 'Bombwe', 'email_prefix' => 'sidwellbombwe'],
+            ['first_name' => 'Lerato', 'last_name' => 'Mogale', 'email_prefix' => 'leratomogale'],
+            ['first_name' => 'Thembi', 'last_name' => 'Nkosi', 'email_prefix' => 'thembinkosi'],
+            ['first_name' => 'Peter', 'last_name' => 'Smith', 'email_prefix' => 'petersmith'],
+            ['first_name' => 'Dwayne', 'last_name' => 'Johnson', 'email_prefix' => 'dwaynejohnson'],
+            ['first_name' => 'Julia', 'last_name' => 'Roberts', 'email_prefix' => 'juliaroberts'],
+            ['first_name' => 'Nandi', 'last_name' => 'Zulu', 'email_prefix' => 'nandizulu'],
+            ['first_name' => 'Sipho', 'last_name' => 'Mkhize', 'email_prefix' => 'siphomkhize'],
+            ['first_name' => 'Mary', 'last_name' => 'Jane', 'email_prefix' => 'maryjane']
         ];
 
         // Roles array
@@ -47,9 +47,11 @@ class UserSeeder extends Seeder
             $genderId = $genderIds[array_rand($genderIds)];
             $isMale = Gender::find($genderId)->name === 'Male';
 
+            // Generate the gender sequence
             $genderSequence = $isMale ? rand(5000, 9999) : rand(0, 4999);
             $citizenStatus = rand(0, 1);
-            $partialId = $dob->format('ymd') . sprintf('%04d', $genderSequence) . $citizenStatus;
+            $constantDigit = rand(8, 9); // Either 8 or 9
+            $partialId = $dob->format('ymd') . sprintf('%04d', $genderSequence) . $citizenStatus . $constantDigit;
             $checksum = $this->calculateLuhnChecksum($partialId);
             $saIdNumber = $partialId . $checksum;
 
@@ -79,21 +81,21 @@ class UserSeeder extends Seeder
 
     private function calculateLuhnChecksum($number)
     {
-        $digits = str_split($number);
-        $total = 0;
+        $digits = array_map('intval', str_split($number));
+        $sum = 0;
         $length = count($digits);
 
         for ($i = 0; $i < $length; $i++) {
-            $digit = (int) $digits[$length - $i - 1];
-            if ($i % 2 == 0) { // Double every second digit
+            $digit = $digits[$length - $i - 1];
+            if ($i % 2 == 0) {
                 $digit *= 2;
                 if ($digit > 9) {
                     $digit -= 9;
                 }
             }
-            $total += $digit;
+            $sum += $digit;
         }
 
-        return (10 - ($total % 10)) % 10;
+        return (10 - ($sum % 10)) % 10;
     }
 }
