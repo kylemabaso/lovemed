@@ -66,7 +66,7 @@
                         <div class="mb-3">
                             <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" name="email" id="email"
-                                value="{{ old('email', $user->email) }}" readonly>
+                                value="{{ old('email', $user->email) }}">
                             <div class="invalid-feedback" id="email_error"></div>
                         </div>
                     </div>

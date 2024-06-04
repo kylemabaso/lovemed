@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 
 class DashboardsController extends Controller
 {
@@ -36,10 +37,22 @@ class DashboardsController extends Controller
      */
     public function show()
     {
-        $patients = User::role('Patient')->with('language')->get();
-        $employees = User::role(['Pharmacist', 'Admin'])->with('language')->get();
+        $user = Auth::user();
 
-        return view("pages.dashboards.doctor", compact('patients', 'employees'));
+        if ($user->hasRole('Admin')) {
+            return view('pages.dashboards.admin');
+        } elseif ($user->hasRole('Patient')) {
+            return view('pages.dashboards.patient');
+        } elseif ($user->hasRole('Doctor')) {
+            $patients = User::role('Patient')->with('language')->get();
+            $employees = User::role(['Pharmacist', 'Admin'])->with('language')->get();
+
+            return view('pages.dashboards.doctor', compact('patients', 'employees'));
+        } elseif ($user->hasRole('Pharmacist')) {
+            return view('pages.dashboards.pharmacist');
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
     }
 
     /**

@@ -28,7 +28,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('assets/client/css/custom.css') }}">
 
-    @vite(['resources/css/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -59,7 +59,16 @@
         <!-- Page Content -->
         <div class="content">
             <div class="container">
-                @yield('content')
+
+                <div class="row">
+                    <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                        @include('components.patient-sidebar')
+                    </div>
+
+                    <div class="col-md-7 col-lg-8 col-xl-9">
+                        @yield('content')
+                    </div>
+                </div>
             </div>
 
         </div>
