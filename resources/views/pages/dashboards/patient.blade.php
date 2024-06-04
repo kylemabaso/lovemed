@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body text-center">
                 <div class="mb-3">
-                    <img src="{{ asset('assets/img/specialities/pt-dashboard-02.png') }}" alt="thermometer-image" width="55">
+                    <img src="{{ asset('assets/client/img/specialities/pt-dashboard-02.png') }}" alt="thermometer-image" width="55">
                 </div>
                 <h5>Temperature</h5>
                 <h6>18 <sub>C</sub></h6>
@@ -32,7 +32,7 @@
         <div class="card">
             <div class="card-body text-center">
                 <div class="mb-3">
-                    <img src="{{ asset('assets/img/specialities/pt-dashboard-03.png') }}" alt="hospital-equipment" width="55">
+                    <img src="{{ asset('assets/client/img/specialities/pt-dashboard-03.png') }}" alt="hospital-equipment" width="55">
                 </div>
                 <h5>Glucose Level</h5>
                 <h6>70 - 90</h6>
@@ -43,7 +43,7 @@
         <div class="card">
             <div class="card-body text-center">
                 <div class="mb-3">
-                    <img src="{{ asset('assets/img/specialities/pt-dashboard-04.png') }}" alt="hospital-equipment" width="55">
+                    <img src="{{ asset('assets/client/img/specialities/pt-dashboard-04.png') }}" alt="hospital-equipment" width="55">
                 </div>
                 <h5>Blood Pressure</h5>
                 <h6>202/90 <sub>mg/dl</sub></h6>
@@ -66,7 +66,7 @@
                                 <h4>BMI Status</h4>
                             </div>
                             <div class="graph-img">
-                                <img src="{{ asset('assets/img/shapes/graph-01.png') }}" alt="shapes-icon">
+                                <img src="{{ asset('assets/client/img/shapes/graph-01.png') }}" alt="shapes-icon">
                             </div>
                             <div class="graph-status-result mt-3">
                                 <span class="graph-update-date">Last Update 6d</span>
@@ -79,7 +79,7 @@
                                     <h4>Heart Rate Status</h4>
                                 </div>
                                 <div class="graph-img">
-                                    <img src="{{ asset('assets/img/shapes/graph-02.png') }}" alt="graph-icon">
+                                    <img src="{{ asset('assets/client/img/shapes/graph-02.png') }}" alt="graph-icon">
                                 </div>
                                 <div class="graph-status-result mt-3">
                                     <span class="graph-update-date">Last Update 2d</span>
@@ -92,7 +92,7 @@
                                 <h4>FBC Status</h4>
                             </div>
                             <div class="graph-img">
-                                <img src="{{ asset('assets/img/shapes/graph-03.png') }}" alt="chart-icon">
+                                <img src="{{ asset('assets/client/img/shapes/graph-03.png') }}" alt="chart-icon">
                             </div>
                             <div class="graph-status-result mt-3">
                                 <span class="graph-update-date">Last Update 5d</span>
@@ -105,7 +105,7 @@
                                 <h4>Weight Status</h4>
                             </div>
                             <div class="graph-img">
-                                <img src="{{ asset('assets/img/shapes/graph-04.png') }}" alt="chart-icon">
+                                <img src="{{ asset('assets/client/img/shapes/graph-04.png') }}" alt="chart-icon">
                             </div>
                             <div class="graph-status-result mt-3">
                                 <span class="graph-update-date">Last Update 3d</span>
