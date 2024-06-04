@@ -10,7 +10,7 @@
         <div class="card">
             <div class="card-body text-center">
                 <div class="mb-3">
-                    <img src="assets/img/specialities/pt-dashboard-01.png" alt="heart-image" width="55">
+                    <img src="{{ asset('assets/client/img/specialities/pt-dashboard-01.png') }}" alt="heart-image" width="55">
                 </div>
                 <h5>Heart Rate</h5>
                 <h6>12 <sub>bpm</sub></h6>
