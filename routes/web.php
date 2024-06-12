@@ -8,7 +8,8 @@ use App\Services\TwilioService;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
-Route::redirect('/', 'dashboard');
+// Route::redirect('/', 'dashboard');
+Route::get('/', [HomeController::class, 'show'])->name('/');
 
 Route::post('/check-email', [UsersController::class, 'checkEmail'])->name('check.email');
 Route::post('/check-phone', [UsersController::class, 'checkPhone'])->name('check.phone');

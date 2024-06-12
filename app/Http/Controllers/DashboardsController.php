@@ -39,7 +39,7 @@ class DashboardsController extends Controller
     {
         $user = Auth::user();
 
-        if ($user->hasRole('Admin')) {
+        if ($user->hasRole('Admin|Kratos')) {
             return view('pages.dashboards.admin');
         } elseif ($user->hasRole('Patient')) {
             return view('pages.dashboards.patient');
